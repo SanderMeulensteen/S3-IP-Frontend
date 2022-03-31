@@ -3,7 +3,7 @@ import PlayerService from '../services/PlayerService'
 
 class PlayerComponent extends react.Component {
 
-    constructor(){
+    constructor(props){
         super(props)
         this.state = {
             players:[]
@@ -38,7 +38,7 @@ class PlayerComponent extends react.Component {
                                 <tr key = {player.id}>
                                     <td> {player.id} </td>
                                     <td> {player.name} </td>
-                                    <td> {player.club_id} </td>
+                                    <td> {player.clubId} </td>
                                     <td> {player.position} </td>
                                 </tr>
                             )
