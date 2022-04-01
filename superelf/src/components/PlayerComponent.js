@@ -1,8 +1,8 @@
 import react from 'react'
-import PlayerService from '../services/PlayerService'
+import './components.css'
+import { Table } from 'react-bootstrap'
 
 class PlayerComponent extends react.Component {
-
     constructor(props){
         super(props)
         this.state = {
@@ -11,9 +11,11 @@ class PlayerComponent extends react.Component {
     }
 
     componentDidMount(){
-        PlayerService.getPlayers().then((response) => {
+        fetch("http://localhost:8080/api/player")
+        .then(res => res.json())
+        .then(json => {
             this.setState({
-                players: response.data
+                players: json
             })
         });
     }
@@ -21,8 +23,10 @@ class PlayerComponent extends react.Component {
     render (){
         return (
             <div>
+                <br/>
                 <h1 className='text-center'> Players </h1>
-                <table className='table table-striped'>
+                <br/>
+                <Table striped hover>
                     <thead>
                         <tr>
                             <td> PlayerID </td>
@@ -44,7 +48,7 @@ class PlayerComponent extends react.Component {
                             )
                         }
                     </tbody>
-                </table>
+                </Table>
             </div>
         )
     }

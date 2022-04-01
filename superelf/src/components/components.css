@@ -1,0 +1,9 @@
+table {
+    max-width: 95%;
+    text-align: center;
+    margin-left: 2.5%;
+}
+
+thead{
+    background-color: rgb(0,142,68);
+}
