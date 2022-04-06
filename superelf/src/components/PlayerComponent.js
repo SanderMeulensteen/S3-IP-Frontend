@@ -31,7 +31,7 @@ class PlayerComponent extends react.Component {
                         <tr>
                             <td> PlayerID </td>
                             <td> Name </td>
-                            <td> ClubID </td>
+                            <td> Club </td>
                             <td> Position </td>
                         </tr>
                     </thead>
@@ -42,8 +42,8 @@ class PlayerComponent extends react.Component {
                                 <tr key = {player.id}>
                                     <td> {player.id} </td>
                                     <td> {player.name} </td>
-                                    <td> {player.clubId} </td>
-                                    <td> {player.position} </td>
+                                    <td> {player.club.clubName} </td>
+                                    <td> {player.position.positionName} </td>
                                 </tr>
                             )
                         }
