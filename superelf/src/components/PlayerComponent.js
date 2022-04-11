@@ -11,7 +11,7 @@ class PlayerComponent extends react.Component {
     }
 
     componentDidMount(){
-        fetch("http://localhost:8080/api/player")
+        fetch("http://localhost:8080/api/players")
         .then(res => res.json())
         .then(json => {
             this.setState({
